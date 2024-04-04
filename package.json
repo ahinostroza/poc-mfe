@@ -1,0 +1,18 @@
+{
+  "name": "poc-microfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "./design-system-app",
+    "./host-app",
+    "./product-app",
+    "./shared-app"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm --prefix design-system-app run dev\" \"npm --prefix product-app run dev\" \"npm --prefix shared-app start\" \"npm --prefix host-app run dev\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "7.2.0"
+  }
+}
